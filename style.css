@@ -154,6 +154,10 @@ a{
     border: 1px solid var(--light-gray);
     border-radius: 12px;
     overflow: hidden;
+    transition:0.3s;
+}
+.main_contents .blog_card:hover{
+    box-shadow: 3px 8px 12px -5px var(--deap-white);
 }
 .main_contents .blog_card > img{
     min-height:175px;
@@ -321,6 +325,13 @@ Media Quires/ Resonsive Design
     .hero_details h1 {
         font-size: 32px;
         max-width: 100%;
+    }
+    .hero_details p {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
     .hero_img {
         padding-top:0px;
