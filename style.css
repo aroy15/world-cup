@@ -172,9 +172,11 @@ a{
     font-size:16px;
     color:var(--gray);
 }
-.main_contents .time_comments i{
+.main_contents .time_comments i,
+.main_contents .time_comments img{
     padding-right:8px;
     color:var(--light-black);
+    vertical-align: middle;
 }
 .main_contents .mc_item_btn {
     display:inline-block;
@@ -227,9 +229,29 @@ a{
 }
 .footer ul a{
     color:var(--deap-white);
+    font-size:16px;
 }
 .footer ul a:hover{
     color:var(--secondary-color);
+}
+.footer .social_icons{
+    gap:20px;
+    justify-content: center;
+    margin-top:60px;
+}
+.footer .social_icons a i{
+    color:var(--deap-white);
+    width:40px;
+    height:40px;
+    border:2px solid var(--deap-white);
+    line-height:36px;
+    border-radius: 50%;
+    text-align:center;
+}
+.footer .social_icons a:hover i{
+    background-color: var(--secondary-color);
+    border-color:var(--secondary-color);
+    color:var(--accent-color);
 }
 /* End of Footer */
 /* End of maing Contents */
