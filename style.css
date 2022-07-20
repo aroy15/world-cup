@@ -1,13 +1,302 @@
+/* Common CSS */
+:root{
+    --primary-color:#161616;
+    --secondary-color:#ffffff;
+    --accent-color:#DD0000;
+    --light-gray:#E8E8E8;
+    --dark-gray:#2C2C2C;
+    --gray:#5C5C5C;
+    --light-black:#444444;
+    --deap-white:#B9B9B9;
+    
+}
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
     outline:0;
 }
+body,button{
+    font-family: 'Poppins', sans-serif;
+    font-size:18px;
+    color:var(--primary-color);
+    transition: 0.3s;
+}
+button{
+    cursor: pointer;
+}
 img{
     max-width:100%;
 }
-body{
+a{
+    text-decoration: none;
+}
+.d_flex{
+    display: flex;
+}
+.d_grid{
+    display:grid;
+}
+.container{
+    max-width:1320px;
+    width:100%;
+    margin:0 auto;
+    padding-left:40px;
+    padding-right:40px;
+}
+/* End of Common CSS */
+/* Hero Section */
+.hero_wrapper{
+    background-color:var(--primary-color);;
+    gap:50px;
+    color:var(--secondary-color);
+    border-radius:20px;
+    padding:30px 50px 0px 80px;
+    margin-top:40px;
+    margin-bottom:80px;
+}
+.hero_details {
+    width: calc(56% + 7px);
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.hero_details h1{
+    font-size:60px;
+    line-height:1.3;
+    max-width:402px;
+    width:100%;
+}
+.hero_details p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.hero_btn {
+    display:inline-block;
+    background: var(--accent-color);
+    border: none;
+    color: var(--secondary-color);
+    padding: 12px 30px;
+    border:2px solid var(--accent-color);
+    border-radius: 5px;
+}
+.hero_btn:hover{
+    background-color: transparent;
+    color:var(--accent-color);
+}
+.hero_btn .fa-angle-right{
+    padding-left:10px;
+    position: relative;
+    animation-name:hero_btn_animate;
+    animation-timing-function: ease-out;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+}
+@keyframes hero_btn_animate{
+    0%{
+        transform:translateX(-5px);
+        opacity:1;
+    }
+    100%{
+        transform:translateX(15px);
+        opacity:0;
+    }
+}
+.hero_img {
+    flex-grow: 1;
+    align-items: flex-end;
+}
+/* End of Hero Section */
+/* Main Contents */
+.main_contents{
+    margin-bottom:80px;
+}
+.main_contents .main_content_wrapper{
+    grid-template-columns: 280px auto;
+    gap:20px;
+    align-items:start;
+}
+.main_contents .mc_category{
+    flex-direction: column;
+    gap:20px;
+    padding:25px;
+    background:var(--primary-color);
+    border-radius: 8px;
+}
+.view_all{
+    display:none;
+}
+.mc_category .category_btn,
+.view_all_btn{
+    display:inline-block;
+    background:var(--secondary-color);
+    padding:12px 30px;
+    border:none;
+    border-radius:8px;
+    border:1px solid var(--light-gray);
+}
+.mc_category .category_btn.active,
+.mc_category .category_btn:hover,
+.view_all_btn{
+    background:var(--accent-color);
+    color:var(--secondary-color);
+    border-color:var(--accent-color);
+}
+.main_contents .mc_cards_wrapper{
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.main_contents .mc_card {
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.main_contents .mc_card > img{
+    min-height:175px;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+}
+.main_contents .mc_card .mc_card_content{
+    padding:15px;
+}
+.mc_card_content h3{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.main_contents .time_comments{
+    gap:30px;
+    font-size:16px;
+    color:var(--gray);
+}
+.main_contents .time_comments i{
+    padding-right:8px;
+    color:var(--light-black);
+}
+.main_contents .mc_item_btn {
+    display:inline-block;
+    font-size: 16px;
+    color:inherit;
+    border: 1px solid var(--primary-color);
+    background: transparent;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+/* Footer */
+.footer{
+    background-color: var(--primary-color);
+    padding:8% 0;
     text-align:center;
-    font-family: 'Poppins', sans-serif;
+}
+.footer h2 {
+    font-size: 40px;
+    color:var(--secondary-color);
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--dark-gray);
+    margin-bottom: 50px;
+}
+.footer ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+    justify-content: center;
+}
+.footer ul a{
+    color:var(--deap-white);
+}
+.footer ul a:hover{
+    color:var(--secondary-color);
+}
+/* End of Footer */
+/* End of maing Contents */
+/* ============================
+Media Quires/ Resonsive Design
+================================*/
+@media only screen and (max-width:991px){
+    .hero_wrapper {
+        gap: 30px;
+        padding-left:50px;
+        padding-right:30px;
+    }
+    .hero_details {
+        width: calc(66% + 7px);
+    }
+    .hero_details h1 {
+        font-size: 36px;
+        max-width: 300px;
+    }
+    .hero_img {
+        padding-top:40px;
+    }
+    .main_contents .main_content_wrapper{
+        grid-template-columns: auto;
+        gap:30px;
+    }
+    .main_contents .mc_category{
+        flex-direction: row;
+        background:transparent;
+        padding:0;
+    }
+    .mc_category .category_btn {
+        flex-grow:1;
+    }
+    .main_contents .mc_cards_wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .mc_card_content h3{
+        font-size: 22px;
+    }
+    .view_all {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:767px){
+    .container{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .hero_wrapper {
+        gap: 30px;
+        padding:30px 20px 0px 0px;
+        text-align:center;
+        flex-direction: column;
+        align-items:center;
+    }
+    .hero_details{
+        padding:0;
+    }
+    .hero_details h1 {
+        font-size: 32px;
+        max-width: 100%;
+    }
+    .hero_img {
+        padding-top:0px;
+    }    
+    .main_contents .mc_category{
+        flex-direction: column;
+        align-items:center;
+    }
+    .mc_category .category_btn{
+        min-width:175px;
+    }    
+    .main_contents .mc_cards_wrapper{
+        grid-template-columns:auto;
+    }
+    .view_all{
+        display:none;
+    }
+    .footer {
+        padding: 50px 0;
+    }
+    .footer ul{
+        flex-direction: column;
+        gap:30px;
+    }
 }
