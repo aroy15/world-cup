@@ -88,12 +88,15 @@ a{
     position: relative;
     animation-name:hero_btn_animate;
     animation-timing-function: ease-out;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-iteration-count:infinite;
 }
 @keyframes hero_btn_animate{
     0%{
         transform:translateX(-5px);
+        opacity:1;
+    }
+    30%{
         opacity:1;
     }
     100%{
@@ -208,10 +211,10 @@ a{
     font-size:15px;
 }
 /* Footer */
-.footer{
+.footer {
     background-color: var(--primary-color);
-    padding:8% 0;
-    text-align:center;
+    padding: 100px 0;
+    text-align: center;
 }
 .footer h2 {
     font-size: 40px;
